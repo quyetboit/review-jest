@@ -21,6 +21,7 @@ export class DetailComponent implements OnInit {
   post?: Post;
   isLoading = false;
   file?: File;
+  uploadSuccess = false;
 
   constructor (
     private activatedRoute: ActivatedRoute,
@@ -50,6 +51,9 @@ export class DetailComponent implements OnInit {
     if (!this.file) {
       return;
     }
-    this.postService.uploadFile(this.file).subscribe(console.log);
+    
+    this.postService.uploadFile(this.file).subscribe(res => {
+      this.uploadSuccess = res.success;
+    });
   }
 }
