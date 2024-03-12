@@ -23,7 +23,7 @@ export class PostService {
   }
 
   uploadFile(file: File) {
-    if (file.size >= 5_000) {
+    if (file.size >= 5_000_000) {
       return of ({ success: false });
     }
 

@@ -62,7 +62,7 @@ describe("Post service", () => {
   });
 
   it("Should upload file failure", () => {
-    service.uploadFile({ size: 6_000 } as File).subscribe(res => {
+    service.uploadFile({ size: 6_000_000 } as File).subscribe(res => {
       expect(res).toEqual({success: false});
     })
   })

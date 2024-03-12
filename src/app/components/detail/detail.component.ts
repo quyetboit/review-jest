@@ -49,11 +49,13 @@ export class DetailComponent implements OnInit {
 
   upload() {
     if (!this.file) {
+      console.log("Not file selected");
       return;
     }
     
     this.postService.uploadFile(this.file).subscribe(res => {
       this.uploadSuccess = res.success;
+      console.log("Upload file: ", res);
     });
   }
 }

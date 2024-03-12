@@ -13,7 +13,7 @@
   }
   <input type="file" value="Upload" (change)="fileChange($event)">
   <br>
-  <button (click)="upload()">Upload</button>
+  <button appDebounceClick (debounceClick)="upload()">Upload</button>
   <br>
   <button routerLink="">Back</button>
 }
